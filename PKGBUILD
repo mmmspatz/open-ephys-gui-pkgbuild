@@ -7,7 +7,7 @@ url="https://open-ephys.org/"
 license=('GPL3')
 source=(
   "git+https://github.com/open-ephys/plugin-GUI.git"
-  "no_require_cmake_release.patch"
+  "allow_build_type_none.patch"
 )
 depends=(
   'freeglut'
@@ -26,7 +26,7 @@ makedepends=(
 )
 sha256sums=(
   'SKIP'
-  'de8d8d9581b8d4fd54a01d651d9ab4fe2a29223bebcd53fc21ce52a2ca8ffe70'
+  '72b21c45a0a9eccb2be0be311b678d6a3687c855d5b3f5fd64c805341b517e05'
 )
 
 pkgver() {
@@ -41,7 +41,7 @@ prepare() {
     --pkgname "$pkgname" \
     --pkgdesc "$pkgdesc"
 
-  patch --directory=plugin-GUI --forward --strip=1 --input=../no_require_cmake_release.patch
+  patch --directory=plugin-GUI --forward --strip=1 --input=../allow_build_type_none.patch
 }
 
 build() {

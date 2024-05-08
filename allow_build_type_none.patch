@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0a1fd0a84..99407184b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -170,8 +170,6 @@ elseif(LINUX)
+ 		target_compile_options(open-ephys PRIVATE -O0) #enable optimization for linux debug
+ 	elseif (${CMAKE_BUILD_TYPE} STREQUAL "Release")
+ 		target_compile_options(open-ephys PRIVATE -O3) #enable optimization for linux release
+-	else()
+-		message(FATAL_ERROR "Invalid build type")
+ 	endif()
+ 	find_package(CURL REQUIRED)
+ 	find_package(PkgConfig REQUIRED)
